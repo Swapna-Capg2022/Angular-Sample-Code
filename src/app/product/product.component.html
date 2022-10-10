@@ -1,0 +1,24 @@
+<div class="card bg-secondary text-white">
+    <div class="card-body">
+        <h4 class="card-title">
+            {{product.productName}}
+        </h4>
+        <h5 class="card-text">
+            {{product.productPrice}}</h5>
+    </div>
+    <table class="table">
+            <tr>
+                <td scope="row">
+                    <b>Product Brand</b>
+                </td>
+                <td>{{product.productBrand}}</td>
+                <td>
+                    <b>Product Name</b>
+                </td>     
+                <td>{{product.productName}}</td>
+            </tr>
+    </table>
+    <div class="card-footer text-muted">
+        <button type="button" class="btn btn-danger" (click)="delete()">Delete</button>
+    </div>
+</div>

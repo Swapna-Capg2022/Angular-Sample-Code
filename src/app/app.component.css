@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+}
+
+p{
+    color: green;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+ol{
+    list-style-type:none;
+    display:flex;
+    justify-content: center;
+  }
+  ol li{
+    display: list-item;
+    padding: 5px 10px;
+    color:Black;
+    margin: 0 3px;
+    font-weight: bold;
+  }
