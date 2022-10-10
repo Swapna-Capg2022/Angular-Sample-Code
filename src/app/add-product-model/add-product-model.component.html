@@ -7,7 +7,15 @@
                     <div class="form-group">
                       <label for="productName">Product Name </label>
                       <input type="text" name="productName" class="form-control" 
-                                    formControlName="productName" >
+                                    formControlName="productName" 
+                        [ngClass]="{ 'is-invalid':productName.errors && (productName.touched || productName.dirty),'is-valid' :productName.valid}">
+                    <div class="invalid-feedback">
+                        <strong *ngIf = "productName.errors?.['required']">productName is required </strong>
+                        <strong *ngIf = "productName.errors?.['minlength']">productName Length must be greater than {{productName.errors?.['minlength'].requiredLength}} character
+                            {{productName.errors?.['minlength'].requiredLength - productName.errors?.['minlength'].actualLength}}
+                            more characters required
+                        </strong>
+                    </div>
                     </div>
                     <div class="form-group">
                         <label for="productPrice">Product Price </label>

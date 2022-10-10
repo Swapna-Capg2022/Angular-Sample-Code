@@ -11,6 +11,7 @@ import { AddProductModelComponent } from './add-product-model/add-product-model.
 import { AddCustomerModelComponent } from './add-customer-model/add-customer-model.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { AddSellerTemplateComponent } from './add-seller-template/add-seller-template.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderComponent } from './header/header.component';
     AddProductModelComponent,
     AddCustomerModelComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddSellerTemplateComponent
   ],
   imports: [
     BrowserModule,
