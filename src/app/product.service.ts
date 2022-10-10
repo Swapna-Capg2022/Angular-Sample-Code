@@ -6,6 +6,10 @@ import { Product } from './models/product';
   providedIn: 'root'
 })
 export class ProductService {
+  
+  addProduct(newProduct: Product) {
+    this.products.push(newProduct);
+  }
 
   products : Product[] = [];
   constructor() { 
