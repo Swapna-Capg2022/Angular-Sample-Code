@@ -12,6 +12,7 @@ import { AddCustomerModelComponent } from './add-customer-model/add-customer-mod
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { AddSellerTemplateComponent } from './add-seller-template/add-seller-template.component';
+import { SellersComponent } from './sellers/sellers.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddSellerTemplateComponent } from './add-seller-template/add-seller-tem
     AddCustomerModelComponent,
     HomeComponent,
     HeaderComponent,
-    AddSellerTemplateComponent
+    AddSellerTemplateComponent,
+    SellersComponent
   ],
   imports: [
     BrowserModule,

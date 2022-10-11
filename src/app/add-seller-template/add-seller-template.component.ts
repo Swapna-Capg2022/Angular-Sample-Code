@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Seller } from '../models/seller';
+import { SellerService } from '../seller.service';
 
 @Component({
   selector: 'app-add-seller-template',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddSellerTemplateComponent implements OnInit {
 
-  constructor() { }
+  addSellerForm = false;
+  seller :Seller = new Seller();
+  constructor(private sellerServ:SellerService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
+
+  addSeller(seller:Seller){
+    this.sellerServ.addSeller(seller);
+    this.addSellerForm = true;
+    this.router.navigateByUrl("/sellers");
+  }
+
 
 }

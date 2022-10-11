@@ -1,1 +1,59 @@
-<p>add-seller-template works!</p>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Add Seller (Template Driven Form)</h4>
+        <div class="row">
+            <div class="col-md-6">
+                    <form novalidate #addSellerForm = "ngForm">
+                        <div class="form-group">
+                            <label for="sellerName">Seller Name</label>
+                             <input type="text" class="form-control" name="sellerName" 
+                             [(ngModel)] = "seller.sellerName" required minlength="5" 
+                             #sellerName="ngModel" 
+                             [ngClass]= "{'is-invalid':sellerName?.errors && (sellerName?.touched || sellerName?.dirty),'is-valid':sellerName?.valid}">
+                             <div class="invalid-feedback">
+                                <strong *ngIf= "sellerName?.errors?.['required']">sellerName Required</strong>
+                                <strong *ngIf= "sellerName?.errors?.['minlength']">
+                                    sellerName must be greater than {{sellerName?.errors?.['minlength'].requiredLength}} characters
+                                </strong>
+                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sellerEmail">Seller Email</label>
+                             <input type="text" class="form-control"
+                             name="sellerEmail"  [(ngModel)] = "seller.sellerEmail" required minlength="5" 
+                             #sellerEmail="ngModel" 
+                             [ngClass]= "{'is-invalid':sellerEmail?.errors && (sellerEmail?.touched || sellerEmail?.dirty),'is-valid':sellerEmail?.valid}" >
+                             <div class="invalid-feedback">
+                                <strong *ngIf= "sellerEmail?.errors?.['required']">sellerEmail Required</strong>
+                                <strong *ngIf= "sellerEmail?.errors?.['minlength']">
+                                    sellerEmail must be greater than {{sellerEmail?.errors?.['minlength'].requiredLength}} characters
+                                </strong>
+                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sellerMobno">Seller MobileNo</label>
+                             <input type="text" class="form-control"
+                             name="sellerMobno"  [(ngModel)] = "seller.sellerMobno"required minlength="10" 
+                             #sellerMobno="ngModel" 
+                             [ngClass]= "{'is-invalid':sellerMobno?.errors && (sellerMobno?.touched || sellerMobno?.dirty),'is-valid':sellerMobno?.valid}" >
+                             <div class="invalid-feedback">
+                                <strong *ngIf= "sellerMobno?.errors?.['required']">sellerMobno Required</strong>
+                                <strong *ngIf= "sellerMobno?.errors?.['minlength']">
+                                    sellerMobno must be greater than {{sellerMobno?.errors?.['minlength'].requiredLength}} characters
+                                </strong>
+                             </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"
+                         (click)= "addSeller(addSellerForm.value)">Add Seller</button>
+                        <button class="btn btn-default">Reset</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <label>
+                        <strong>sellerForm : JSON</strong>
+                    </label>
+                    <pre class="alert alert-dark">{{addSellerForm.value | json}}</pre>
+                </div>
+        </div>
+    </div>
+</div>

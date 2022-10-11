@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Sellers</h4>
+    </div>
+    <table class="table table-striped table-inverse">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Seller Name</th>
+                <th>Seller Email</th>
+                <th>Seller MobileNo</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let seller of sellers">
+                    <td scope="row">{{seller.sellerName}}</td>
+                    <td>{{seller.sellerEmail}}</td>
+                    <td>{{seller.sellerMobno}}</td>
+                </tr>
+            </tbody>
+    </table>
+    
+</div>
+
+
